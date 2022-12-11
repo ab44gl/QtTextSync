@@ -1,6 +1,6 @@
+#include "stdafx.h"
 #include "QtTextSync.h"
 #include "DialogSetIP.h"
-#include "stdafx.h"
 #include <qthread.h>
 QtTextSync::QtTextSync(QWidget *parent) : QMainWindow(parent) {
   ui.setupUi(this);
@@ -38,6 +38,11 @@ QtTextSync::QtTextSync(QWidget *parent) : QMainWindow(parent) {
     // refresh buttton
     QObject::connect(ui.but_refresh, &QPushButton::clicked,
                      [this]() { pullTextAndUpdate(); });
+    // post button
+    QObject::connect(ui.but_post, &QPushButton::clicked, [this]() {
+      auto msg = QString("this is client").toUtf8();
+      manager->post(request, msg);
+    });
     // auto checkbox
     QObject::connect(ui.checkbox_auto, &QCheckBox::clicked,
                      [this](bool checked) {
