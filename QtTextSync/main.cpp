@@ -8,4 +8,5 @@ int main(int argc, char *argv[])
     QtTextSync w;
     w.show();
     return a.exec();
+    //send-receive
 }
