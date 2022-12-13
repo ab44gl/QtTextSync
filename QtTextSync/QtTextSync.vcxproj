@@ -97,12 +97,18 @@
   <ItemGroup>
     <QtRcc Include="QtTextSync.qrc" />
     <QtUic Include="DialogSetIP.ui" />
+    <QtUic Include="LayoutWindow.ui" />
     <QtUic Include="QtTextSync.ui" />
     <QtMoc Include="QtTextSync.h" />
     <ClCompile Include="DialogSetIP.cpp" />
+    <ClCompile Include="LayoutWindow.cpp" />
+    <ClCompile Include="NetworkHelper.cpp" />
     <ClCompile Include="QtTextSync.cpp" />
     <ClCompile Include="main.cpp" />
     <QtMoc Include="DialogSetIP.h" />
+    <QtMoc Include="LayoutWindow.h" />
+    <ClInclude Include="LiveData.h" />
+    <ClInclude Include="NetworkHelper.h" />
     <ClInclude Include="stdafx.h" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">Create</PrecompiledHeader>

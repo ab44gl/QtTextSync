@@ -49,9 +49,18 @@
     <ClCompile Include="DialogSetIP.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="LayoutWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NetworkHelper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="DialogSetIP.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="LayoutWindow.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>
@@ -59,8 +68,19 @@
     <QtUic Include="DialogSetIP.ui">
       <Filter>Form Files</Filter>
     </QtUic>
+    <QtUic Include="LayoutWindow.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
   </ItemGroup>
   <ItemGroup>
     <None Include=".clang-format" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="NetworkHelper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LiveData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
