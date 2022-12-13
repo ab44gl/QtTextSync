@@ -11,10 +11,7 @@ LayoutWindow::LayoutWindow(QWidget *parent) : QMainWindow(parent)
     _networkHelper->setOnMessageListener(
         [this](NetworkHelper::Message msg) { std::cout << msg.toString().toStdString() << std::endl; });
     //_networkHelper->get();
-    auto *count = new LiveData<int>(100);
-    count->observe([this](auto newData) {
-        std::cout << "data change " << newData<<std::endl;
-    });
+   
 }
 
 LayoutWindow::~LayoutWindow()

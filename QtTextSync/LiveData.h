@@ -19,6 +19,8 @@ template <class T> class LiveData
     void notify();
 };
 
+
+
 template <class T> inline LiveData<T>::LiveData(T data) : _data(data)
 {
 }
@@ -51,4 +53,8 @@ template <class T> inline void LiveData<T>::notify()
 {
     if (_observeFun != nullptr)
         _observeFun(_data);
+}
+template <typename T> static LiveData<T> livedataOf(T t)
+{
+    return LiveData<T>(t);
 }
