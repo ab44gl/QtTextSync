@@ -23,7 +23,7 @@ class NetworkHelper
     using MessageFun = void(Message);
 
   protected:
-    QString _ip = "localhost";
+    QString _ip = "192.168.43.1";
     int _port = 8080;
     QNetworkAccessManager *_manager;
     std::function<MessageFun> _onMessageListener = nullptr;
@@ -35,4 +35,5 @@ class NetworkHelper
     void setIpPort(QString ip = "localhost", int port = 8080);
     void get();
     void post(QString msg);
+    QString ipPortString();
 };

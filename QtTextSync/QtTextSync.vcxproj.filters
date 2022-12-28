@@ -58,6 +58,12 @@
     <ClCompile Include="LiveDataWindow.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="TextSync.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SetIpPortDialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="DialogSetIP.h">
@@ -69,6 +75,12 @@
     <QtMoc Include="LiveDataWindow.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="TextSync.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="SetIpPortDialog.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="DialogSetIP.ui">
@@ -78,6 +90,12 @@
       <Filter>Form Files</Filter>
     </QtUic>
     <QtUic Include="LiveDataWindow.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="TextSync.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="SetIpPortDialog.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>

@@ -87,7 +87,7 @@
       <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>false</GenerateDebugInformation>
     </Link>
     <QtMoc>
@@ -95,6 +95,9 @@
     </QtMoc>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="SetIpPortDialog.cpp" />
+    <ClCompile Include="TextSync.cpp" />
+    <QtMoc Include="TextSync.h" />
     <QtRcc Include="QtTextSync.qrc" />
     <QtUic Include="DialogSetIP.ui" />
     <QtUic Include="LayoutWindow.ui" />
@@ -113,11 +116,14 @@
     <ClInclude Include="LiveData.h" />
     <QtMoc Include="LiveDataWindow.h" />
     <ClInclude Include="NetworkHelper.h" />
+    <QtMoc Include="SetIpPortDialog.h" />
     <ClInclude Include="stdafx.h" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <QtUic Include="SetIpPortDialog.ui" />
+    <QtUic Include="TextSync.ui" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".clang-format" />

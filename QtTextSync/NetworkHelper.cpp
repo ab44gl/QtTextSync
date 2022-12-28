@@ -4,16 +4,15 @@
 NetworkHelper::NetworkHelper(QWidget *widget)
 {
     _manager = new QNetworkAccessManager(widget);
-    _manager->setTransferTimeout(30000);
+    _manager->setTransferTimeout(50000);
     // message signal
     QObject::connect(_manager, &QNetworkAccessManager::finished, widget, [this](QNetworkReply *reply) {
         Message msg;
         msg.isPost = reply->operation() == QNetworkAccessManager::Operation::PostOperation;
-        msg.isError = reply->error();
+        msg.isError = reply->error() == QNetworkReply::NetworkError::NoError ? false : true;
         if (msg.isError)
         {
             msg.errorString = reply->errorString();
-            return;
         }
         msg.dataString = reply->readAll();
         if (_onMessageListener != nullptr)
@@ -23,8 +22,8 @@ NetworkHelper::NetworkHelper(QWidget *widget)
 
 NetworkHelper::~NetworkHelper()
 {
-    delete _manager;
     _manager->deleteLater();
+    delete _manager;
 }
 
 void NetworkHelper::setOnMessageListener(std::function<MessageFun> listener)
@@ -40,13 +39,24 @@ void NetworkHelper::setIpPort(QString ip, int port)
 
 void NetworkHelper::get()
 {
-    QNetworkRequest request(QUrl("http://" + _ip + ":" + QString(_port)));
+    QNetworkRequest request(QUrl("http://" + ipPortString()));
+    request.setHeader(request.ContentTypeHeader, "application/text");
     _manager->get(request);
 }
 
 void NetworkHelper::post(QString msg)
 {
-    QNetworkRequest request(QUrl("http://" + _ip + ":" + QString(_port)));
+    QNetworkRequest request(QUrl("http://" +ipPortString()));
     request.setHeader(request.ContentTypeHeader, "application/text");
     _manager->post(request, msg.toUtf8());
+    
+}
+
+QString NetworkHelper::ipPortString()
+{
+    if (_port == 0)
+    {
+        return _ip;
+    }
+    return _ip + ":" + QString::number(_port);
 }
